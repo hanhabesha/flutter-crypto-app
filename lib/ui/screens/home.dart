@@ -1,10 +1,12 @@
 import 'package:cryptocurrency_app/constants/keys.dart';
 import 'package:cryptocurrency_app/provider/crypto_provider.dart';
+import 'package:cryptocurrency_app/ui/widgets/ad_slider.dart';
 import 'package:cryptocurrency_app/ui/widgets/favorite_pair.dart';
 import 'package:cryptocurrency_app/ui/widgets/pair_tile.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:easy_localization/easy_localization.dart';
+
 import '../../generated/locale_keys.g.dart';
 
 class HomeScreen extends HookConsumerWidget {
@@ -41,8 +43,9 @@ class HomeScreen extends HookConsumerWidget {
           Expanded(
             child: Column(
               children: [
+                AddSlider(),
                 Container(
-                  height: 190,
+                  height: 200,
                   child: favoritePair.when(
                     data: (data) {
                       return FavoritePairWidget(data);

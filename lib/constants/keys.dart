@@ -11,7 +11,7 @@ class Keys {
   static final SETTINGS_SCREEN = Key('settings_screen');
   static final DETAILS_SCREEN = Key('details_screen');
 
-  static final SEARCH_TEXT_FIELD = Key('seach_text_field');
+  static final SEARCH_TEXT_FIELD = Key('search_text_field');
 
   static final PAIR_TILE = Key('pair_tile');
 }

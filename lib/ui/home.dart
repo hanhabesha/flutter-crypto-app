@@ -3,9 +3,9 @@ import 'package:cryptocurrency_app/provider/navigation_provider.dart';
 import 'package:cryptocurrency_app/ui/screens/home.dart';
 import 'package:cryptocurrency_app/ui/screens/search.dart';
 import 'package:cryptocurrency_app/ui/screens/settings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 import '../generated/locale_keys.g.dart';
 
