@@ -1,60 +1,39 @@
+import 'package:banner_carousel/banner_carousel.dart';
 import 'package:flutter/material.dart';
-import 'package:scaled_list/scaled_list.dart';
 
-class AddSlider extends StatelessWidget {
+class AdSlider extends StatefulWidget {
+  AdSlider({
+    Key? key,
+  }) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return ScaledList(
-      selectedCardHeightRatio: 0.3,
-      unSelectedCardHeightRatio: 0.2,
-      itemCount: categories.length,
-      itemColor: (index) {
-        return kMixedColors[index % kMixedColors.length];
-      },
-      itemBuilder: (index, selectedIndex) {
-        final category = categories[index];
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: selectedIndex == index ? 100 : 80,
-              child: Image.asset(category.image),
-            ),
-            // SizedBox(height: 15),
-            // Text(
-            //   category.name,
-            //   style: TextStyle(
-            //       color: Colors.white,
-            //       fontSize: selectedIndex == index ? 25 : 20),
-            // )
-          ],
-        );
-      },
-    );
-  }
-
-  final List<Color> kMixedColors = [
-    Color(0xff71A5D7),
-    Color(0xff72CCD4),
-    Color(0xffFBAB57),
-    Color(0xffF8B993),
-    Color(0xff962D17),
-    Color(0xffc657fb),
-    Color(0xfffb8457),
-  ];
-
-  final List<Category> categories = [
-    Category(image: "assets/images/1.png", name: "Beef"),
-    Category(image: "assets/images/2.png", name: "Chicken"),
-    Category(image: "assets/images/3.png", name: "Dessert"),
-    Category(image: "assets/images/4.png", name: "Lamb"),
-    Category(image: "assets/images/5.png", name: "Pasta"),
-  ];
+  _AdSliderState createState() => _AdSliderState();
 }
 
-class Category {
-  final String image;
-  final String name;
+class _AdSliderState extends State<AdSlider> {
+  @override
+  Widget build(BuildContext context) {
+    return BannerCarousel(
+      animation: true,
+      banners: BannerImages.listBanners,
+      onTap: (id) => print(id),
+    );
+  }
+}
 
-  Category({required this.image, required this.name});
+class BannerImages {
+  static const String banner1 =
+      "https://picjumbo.com/wp-content/uploads/the-golden-gate-bridge-sunset-1080x720.jpg";
+  static const String banner2 =
+      "https://cdn.mos.cms.futurecdn.net/Nxz3xSGwyGMaziCwiAC5WW-1024-80.jpg";
+  static const String banner3 = "https://wallpaperaccess.com/full/19921.jpg";
+  static const String banner4 =
+      "https://images.pexels.com/photos/2635817/pexels-photo-2635817.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=1400";
+
+  static List<BannerModel> listBanners = [
+    BannerModel(imagePath: banner1, id: "1"),
+    BannerModel(imagePath: banner2, id: "2"),
+    BannerModel(imagePath: banner3, id: "3"),
+    BannerModel(imagePath: banner4, id: "4"),
+  ];
 }

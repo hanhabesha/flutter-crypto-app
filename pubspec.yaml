@@ -24,6 +24,7 @@ dependencies:
     git: https://github.com/salvadordeveloper/flutter-candlesticks.git
   mockito: ^5.0.9
   scaled_list: ^2.0.0
+  banner_carousel: ^1.2.1
 
 dev_dependencies:
   integration_test:

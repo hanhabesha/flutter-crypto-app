@@ -23,18 +23,18 @@ class HomeScreen extends HookConsumerWidget {
             centerTitle: false,
             title: Text(
               LocaleKeys.homeTitle.tr(),
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             actions: [
               Container(
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(50)),
+                    borderRadius: BorderRadius.circular(30)),
                 width: 45,
                 child: Icon(
                   Icons.person_outline,
-                  size: 30,
+                  size: 24,
                   color: Colors.black,
                 ),
               ),
@@ -43,7 +43,8 @@ class HomeScreen extends HookConsumerWidget {
           Expanded(
             child: Column(
               children: [
-                AddSlider(),
+                SizedBox(height: 20),
+                AdSlider(),
                 Container(
                   height: 200,
                   child: favoritePair.when(
